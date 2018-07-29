@@ -5,12 +5,12 @@ import time
 from collections import deque
 from keras.models import model_from_json
 
-json_file = open('C:\\Users\\aishu\\Desktop\\deeplearning\\MNIST FLASK\\cnn_model.json','r')
+json_file = open('C:\\Users\\aishu\\Desktop\\deeplearning\\MNIST FLASK\\mnist_model.json','r')
 loaded_model_json = json_file.read()
 json_file.close()
 loaded_model = model_from_json(loaded_model_json)
     
-loaded_model.load_weights('C:\\Users\\aishu\\Desktop\\deeplearning\\MNIST FLASK\\cnn_weights.h5')
+loaded_model.load_weights('C:\\Users\\aishu\\Desktop\\deeplearning\\MNIST FLASK\\mnist.h5')
 
 
 
@@ -18,7 +18,7 @@ cap = cv2.VideoCapture(0)
 # collection of points to draw
 center_points = deque(maxlen= 512)
 
-# green colour pointer to be detected
+# blue colour pointer to be detected
 lower_blue = np.array([100,150,0], np.uint8)
 upper_blue = np.array([140,255,255], np.uint8)
 
